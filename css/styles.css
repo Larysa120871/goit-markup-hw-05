@@ -325,7 +325,6 @@ project-title and team-title have similar css ----------*/
   width: 40px;
   height: 40px;
 }
-
 .team-text {
   margin-bottom: 8px;
 }
@@ -342,12 +341,14 @@ project-title and team-title have similar css ----------*/
   letter-spacing: 0.02em;
   margin-bottom: 72px;
 }
+
 .customers-list {
   display: flex;
   gap: 24px;
   align-items: center;
   justify-content: center;
 }
+
 .customers-item {
   width: calc((100% - 120px) / 6);
   height: 88px;
@@ -406,6 +407,9 @@ project-title and team-title have similar css ----------*/
   color: #ffffff;
   width: 264px;
 }
+.footer-social-container {
+  margin-right: 80px;
+}
 .footer-soc-text {
   font-weight: 500;
   color: var(--background-color);
@@ -443,6 +447,77 @@ project-title and team-title have similar css ----------*/
 .footer-soc-pic {
   fill: var(--light-color);
 }
+
+.footer-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.footer-subscribe {
+  display: flex;
+  
+  
+}
+
+.subscribe-input {
+  border: 1px solid var(--background-color);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: transparent;
+  height: 40px;
+  width: 264px;
+  padding-left: 16px;
+  outline: transparent;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+}
+
+.subscribe-input::placeholder {
+  font-size: 12px;
+  line-height: 1.5; 
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+}
+
+.subscribe-btn {
+  background-color: var(--primary-brand-color);
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--background-color);
+  cursor: pointer;
+  padding: 8px 24px;
+  margin: 0 auto;
+  border: none;
+  min-width: 165px;
+  height: 40px;
+  border-radius: 4px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition);
+}
+
+.subscribe-btn:is(:hover, :focus) {
+  background-color: var(--pressed-state-color);
+}
+.newsletter-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: var(--background-color);
+  margin-left: 16px;
+}
+
 
 /*-----------FILTER-----------*/
 .filter {
@@ -640,15 +715,28 @@ project-title and team-title have similar css ----------*/
 .modal-field {
   margin-bottom: 8px;
 }
+.modal-field-comment {
+  margin-bottom: 16px;
+}
+.modal-field-policy {
+  margin-bottom: 24px;
+}
 .modal-input {
   width: 100%;
   height: 40px;
   padding: 0;
   padding-left: 38px;
+  padding-right: 34px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   background-color: transparent;
+  outline: transparent;
+  transition: border-color var(--transition)
 }
+.modal-input:focus {
+  border-color: var(--primary-brand-color);
+}
+
 .modal-label {
   font-family: 'Roboto';
   font-style: normal;
@@ -656,7 +744,8 @@ project-title and team-title have similar css ----------*/
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: var(--subtle-text-color);
-  display: inline-block; 
+  display: block; 
+  margin-bottom: 4px;
 }
 .input-wrap {
   position: relative;
@@ -666,5 +755,95 @@ project-title and team-title have similar css ----------*/
   left: 16px;
   top: 50%;
   transform: translateY(-50%);
-  fill: #2E2F42; 
+  fill: var(--dark-color); 
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-input:focus + .input-icon {
+  fill: var(--primary-brand-color);
+}
+.modal-textarea {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  width: 100%;
+  height: 120px;
+  padding: 8px 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  outline: transparent;
+  transition: border-color var(--transition);
+  resize: none;   
+  
+}
+.modal-textarea:focus {
+  border-color: var(--primary-brand-color);
+}
+
+.check-text {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--subtle-text-color);
+  align-items: center;
+}
+.check-text a {
+  line-height: 1.33;
+  text-decoration: underline;
+  color: var(--primary-brand-color);
+  align-items: center;
+}
+.check-text span {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input-check:checked + .check-text span {
+  border: none;
+  background-color: var(--pressed-state-color);
+  fill: var(--light-color);
+}
+.input-check:focus + .check-text span {
+  border-color: var(--pressed-state-color);
+
+}
+
+
+.send-wrap {
+  display: flex;
+  width: 169px;
+  height: 56px;
+  background: var(--primary-brand-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  
+}
+.modal-send-btn {     
+  background-color: var(--primary-brand-color);
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--background-color);
+  cursor: pointer;
+  display: block;
+  padding: 16px 32px;
+  margin: 0 auto;
+  border: none;
+  min-width: 169px;
+  border-radius: 4px;
+  transition: background-color var(--transition);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+.modal-send-btn:is(:hover, :focus) {
+  background-color: var(--pressed-state-color);
 }
